@@ -14,9 +14,9 @@ namespace CurrencyDisp
     class XmlParser
     {
         string CurName;
-        Double Ratio;
+        float Ratio;
         DateTime Date;
-        public XmlParser(string name, double ratio, DateTime date)
+        public XmlParser(string name, float ratio, DateTime date)
         {
                     CurName = name;
                     Ratio = ratio;
@@ -27,7 +27,7 @@ namespace CurrencyDisp
             get { return CurName; }
             set { CurName = value; }
         }
-        public double RatioGS
+        public float RatioGS
         {
             get { return Ratio; }
             set { Ratio = value; }
