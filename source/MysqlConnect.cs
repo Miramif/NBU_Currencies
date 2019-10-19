@@ -67,6 +67,52 @@ namespace CurrencyDisp
                 return false;
             }
         }
+        public string Choose_TypeR(int cur_type)
+        {
+            string type;
+            switch (cur_type)
+            {
+                case 1:
+                    {
+                        type = "JPY";
+                        break;
+                    }
+                case 2:
+                    {
+                        type = "RUB";
+                        break;
+                    }
+                case 3:
+                    {
+                        type = "GBP";
+                        break;
+                    }
+                case 4:
+                    {
+                        type = "USD";
+                        break;
+                    }
+                case 5:
+                    {
+                        type = "BYN";
+                        break;
+                    }
+                case 6:
+                    {
+                        type = "EUR";
+                        break;
+                    }
+                case 7:
+                    {
+                        type = "PLN";
+                        break;
+                    }
+                default:
+                    type = "USD";
+                    break;
+            }
+            return type;
+        }
         public int Choose_Type(string cur_type)
         {
             int type;
@@ -113,9 +159,9 @@ namespace CurrencyDisp
             }
             return type;
         }
-        public void Insert(int type, float ratio, string date)
+        public void Insert(int type, string ratio, string date)
         {
-            string query = "INSERT INTO ratio (type_id, ratio, r_date) VALUES ("+ type +","+ ratio + ",'" + date +"')";
+            string query = "INSERT INTO ratio (type_id, ratio, r_date) VALUES ("+ type +",'"+ ratio + "','" + date +"')";
             //open connection
             if (this.OpenConnection() == true)
             {
